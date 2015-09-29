@@ -46,6 +46,16 @@ for(i in seq(length(file))) {
   df$Kommun <- namn
   datafr <- rbind(datafr,df)
 }
+
+datafr$Procent <- sub(",",".",datafr$Procent)
+datafr$Procent  <- as.numeric(datafr$Procent)
+datafr$Procent_FGVal <- sub(",",".",datafr$Procent_FGVal)
+datafr$Procent_FGVal  <- as.numeric(datafr$Procent_FGVal)
+datafr$Procent_Ändring <- sub(",",".",datafr$Procent_Ändring)
+datafr$Procent_Ändring  <- as.numeric(datafr$Procent_Ändring)
+datafr$Röster  <- as.numeric(datafr$Röster)
+datafr$Röster_FGVal  <- as.numeric(datafr$Röster_FGVal)
+
 return(datafr)
 }
 
