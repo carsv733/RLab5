@@ -7,14 +7,13 @@ install.packages("jsonlite")
 library(jsonlite)
 
 
-myData <- electionData(c("0136", "0140"), "D:/Dokument/732A50/")
+myData <- electionData(c("0136", "0140"), "D:/Dokument/732A50/slutresultat")
 
 electionData <- function(kommun, path) {
 
 #För möjliga argument "kommun" och "path" (path=sökväg)
-list <- list.files(paste(path, "slutresultat/", sep=""),full.names=T,pattern = "*R.xml")
-
-folder <- "slutresultat/slutresultat_"
+list <- list.files(path,full.names=T,pattern = "*R.xml")
+folder <- "/slutresultat_"
 format <- "R.xml"
 
 file<-c()
@@ -24,7 +23,7 @@ for (i in seq(length(kommun))) {
 
 #Nu går detta köra med en 
 
-listTest<-c()
+listTest<-character()
 for (i in seq(length(list))) {
   if (list[i]%in%file) {
     listTest <- append(listTest, list[i])
