@@ -32,29 +32,7 @@
 </div>
 
 
-<div id="description" class="section level1">
-<h1>Description</h1>
-<p><code>electionData</code> is used to make a data frame of election data of 2014.</p>
-<div id="usage" class="section level2">
-<h2>Usage</h2>
-<p>electionData(kommun,path)</p>
-</div>
-<div id="arguments" class="section level2">
-<h2>Arguments</h2>
-<ul>
-<li>kommun - Municipality (or municipalitys in vector).</li>
-<li>path - Directory to the “resultat”-folder.</li>
-</ul>
-</div>
-</div>
-<div id="get-a-data-frame" class="section level1">
-<h1>Get a data frame</h1>
-<p><code>electionData(c(&quot;0136&quot;, &quot;0140&quot;), &quot;.../Downloads/slutresultat&quot;)</code></p>
-<div id="municipality-codes" class="section level2">
-<h2>Municipality codes</h2>
-<p><code>\url{http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf}</code></p>
-</div>
-</div>
+<p><code>electionAPI</code> is a package containing the function <code>electionData</code> wich is used to make a data frame of election data from 2014. First choose wich municipality the data should contain. Municipality codes can be found here: <code>http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf</code>. Download the API <code>http://www.val.se/val/val2014/slutresultat/slutresultat.zip</code>. Now use the function: electionData(kommun,path) with “kommun”= municipality code or municipality codes in a vector and “path”= directory to the “resultat”-folder. For example: <code>electionData(c(&quot;0136&quot;, &quot;0140&quot;), &quot;.../Downloads/slutresultat&quot;)</code>.</p>
 
 
 

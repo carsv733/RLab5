@@ -10,23 +10,6 @@ vignette: >
 ---
 
 
-# Description
 
-`electionData` is used to make a data frame of election data of 2014.
-
-## Usage
-
-electionData(kommun,path)
-
-## Arguments
-* kommun - Municipality (or municipalitys in vector).
-* path - Directory to the "resultat"-folder.
-
-# Get a data frame
-
-`electionData(c("0136", "0140"), ".../Downloads/slutresultat")`
-
-## Municipality codes
-
-`\url{http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf}`
+`electionAPI` is a package containing the function `electionData` wich is used to make a data frame of election data from 2014. First choose wich municipality the data should contain. Municipality codes can be found here: `http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf`. Download the API `http://www.val.se/val/val2014/slutresultat/slutresultat.zip`. Now use the function: electionData(kommun,path) with "kommun"= municipality code or municipality codes in a vector and "path"= directory to the "resultat"-folder. For example: `electionData(c("0136", "0140"), ".../Downloads/slutresultat")`.
 
