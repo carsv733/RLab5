@@ -41,20 +41,20 @@ for(i in seq(length(file))) {
   temps <- temps[names(temps) == "GILTIGA"]
   df <- data.frame(matrix(unlist(temps), ncol=7, byrow=T),stringsAsFactors=FALSE)
   df$X1 <- NULL
-  colnames(df) <- c("Parti", "Röster","Röster_FGVal","Procent","Procent_FGVal","Procent_Ändring")
+  colnames(df) <- c("Party", "Votes","Votes_PrevEl","Percent","Percent_PrevEl","Percent_Change")
   df["Kommun"] <- NA
   df$Kommun <- namn
   datafr <- rbind(datafr,df)
 }
 
-datafr$Procent <- sub(",",".",datafr$Procent)
-datafr$Procent  <- as.numeric(datafr$Procent)
-datafr$Procent_FGVal <- sub(",",".",datafr$Procent_FGVal)
-datafr$Procent_FGVal  <- as.numeric(datafr$Procent_FGVal)
-datafr$Procent_Ändring <- sub(",",".",datafr$Procent_Ändring)
-datafr$Procent_Ändring  <- as.numeric(datafr$Procent_Ändring)
-datafr$Röster  <- as.numeric(datafr$Röster)
-datafr$Röster_FGVal  <- as.numeric(datafr$Röster_FGVal)
+datafr$Percent <- sub(",",".",datafr$Percent)
+datafr$Percent  <- as.numeric(datafr$Percent)
+datafr$Percent_PrevEl <- sub(",",".",datafr$Percent_PrevEl)
+datafr$Percent_PrevEl  <- as.numeric(datafr$Percent_PrevEl)
+datafr$Percent_Change <- sub(",",".",datafr$Percent_Change)
+datafr$Percent_Change  <- as.numeric(datafr$Percent_Change)
+datafr$Votes  <- as.numeric(datafr$Votes)
+datafr$Votes_PrevEl  <- as.numeric(datafr$Votes_PrevEl)
 
 return(datafr)
 }
