@@ -24,9 +24,6 @@ Municipality codes:
 }
 
 
-\examples{
-myData <- electionData(c("0136", "0140"), ".../Downloads/slutresultat")
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }

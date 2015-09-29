@@ -9,3 +9,6 @@ Author: c(
 Maintainer: <carsv733@student.liu.se>
 Description: Makes a data frame of the election results 2014.
 License: What license is it under?
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

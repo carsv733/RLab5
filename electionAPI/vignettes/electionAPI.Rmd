@@ -1,0 +1,32 @@
+---
+title: "Election Data"
+author: "Caroline Svahn & Martina Sandberg"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Election Data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+
+# Description
+
+`electionData` is used to make a data frame of election data of 2014.
+
+## Usage
+
+electionData(kommun,path)
+
+## Arguments
+* kommun - Municipality (or municipalitys in vector).
+* path - Directory to the "resultat"-folder.
+
+# Get a data frame
+
+`electionData(c("0136", "0140"), ".../Downloads/slutresultat")`
+
+## Municipality codes
+
+`\url{http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf}`
+
