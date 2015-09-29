@@ -1,11 +1,11 @@
-library(XML)
-library(httr)
+
 
 # Exempel:
 # myData <- electionData(c("0136", "0140"), "/Users/Martini/Downloads/slutresultat")
 
 electionData <- function(kommun, path) {
-  
+  library(XML)
+  library(httr)
   #För möjliga argument "kommun" och "path" (path=sökväg)
   list <- list.files(path,full.names=T,pattern = "*R.xml")
   folder <- "/slutresultat_"
