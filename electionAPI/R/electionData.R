@@ -3,17 +3,24 @@
 # Exempel:
 #myData <- electionData(c("0136", "0140"), "/Users/Martini/Downloads/slutresultat")
 
-electionData <- function(kommun, path) {
+electionData <- function(kommun) {
   library(XML)
   library(httr)
   #För möjliga argument "kommun" och "path" (path=sökväg)
-  list <- list.files(path,full.names=T,pattern = "*R.xml")
+  list <- list.files(paste(getwd(), "/slutresultat", sep=""),full.names=T,pattern = "*R.xml")
+
+  if (length(list)==0) {
+    stop("Invalid path argument")
+  }
   folder <- "/slutresultat_"
   format <- "R.xml"
   
   file<-c()
   for (i in seq(length(kommun))) {
-    file[i] <- as.character(paste(path, folder, kommun[i], format, sep=""))
+    file[i] <- as.character(paste(getwd(), "/slutresultat", folder, kommun[i], format, sep=""))
+    if (!file[i]%in%list) {
+      stop(paste(kommun[i], "is not a valid kommun argument"))
+    }  
   }
   
   #Nu går detta köra med en 
@@ -23,6 +30,10 @@ electionData <- function(kommun, path) {
     if (list[i]%in%file) {
       listTest <- append(listTest, list[i])
     }
+  }
+  
+  if (!"XML"%in%available.packages()) {
+    stop("Try: library(XML)")
   }
   
   datafr <- data.frame()
