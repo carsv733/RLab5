@@ -54,12 +54,3 @@ electionData <- function(kommun, path) {
   return(datafr)
 }
 
-counts <- tapply(myData$Percent, list(as.factor(myData$Party), as.factor(myData$Kommun)), mean)
-counts <- counts[order(rownames(counts)),]
-names <- colnames(counts)
-counts <- t(as.matrix(counts[rownames(counts)=="SD"]))
-colnames(counts) <- names
-barplot(counts, main="Car Distribution by Gears and VS",
-        xlab="Number of Gears", col=c("darkblue", "blue", "yellow", "orange", "green", "seagreen" ,"red", "purple", "pink"),
-        legend = myData$Party[1:9] , beside=TRUE)
-
