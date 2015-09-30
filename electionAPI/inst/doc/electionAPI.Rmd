@@ -13,9 +13,8 @@ vignette: >
 
 ## Election Data
 
-`electionData` is used to make a data frame of election data from 2014. First choose wich municipality the data should contain. Municipality codes can be found here: `http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf`. Download the API `http://www.val.se/val/val2014/slutresultat/slutresultat.zip`. Now use the function: electionData(kommun,path) with "kommun"= municipality code or municipality codes in a vector and "path"= directory to the "resultat"-folder. For example: `electionData(c("0136", "0140"), ".../Downloads/slutresultat")`.
+`electionData` is used to make a data frame of election data from 2014. First choose wich municipality the data should contain. Municipality codes can be found here: `http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf`. Download the API `http://www.val.se/val/val2014/slutresultat/slutresultat.zip`, unzip and  put in current directory (getwd()). Now use the function: electionData(kommun) with "kommun"= municipality code or municipality codes in a vector. For example: `electionData(c("0136", "0140"))`.
 
 ## Shiny App
 
-To use the shiny app save a data with name "myData": `myData <- electionData()`. Load the app: `runGitHub(repo = "electionApp", username = "Carsv733",subdir = "App-1")`.
-
+To use the shiny app save a data with name "myData": `myData <- electionData(...)`. Load the app: `runGitHub(repo = "electionApp", username = "Carsv733",subdir = "App-1")`.

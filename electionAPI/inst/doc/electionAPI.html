@@ -35,11 +35,11 @@
 <p><code>electionAPI</code> is a package containing the function <code>electionData</code> with a connected Shiny app.</p>
 <div id="election-data" class="section level2">
 <h2>Election Data</h2>
-<p><code>electionData</code> is used to make a data frame of election data from 2014. First choose wich municipality the data should contain. Municipality codes can be found here: <code>http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf</code>. Download the API <code>http://www.val.se/val/val2014/slutresultat/slutresultat.zip</code>. Now use the function: electionData(kommun,path) with “kommun”= municipality code or municipality codes in a vector and “path”= directory to the “resultat”-folder. For example: <code>electionData(c(&quot;0136&quot;, &quot;0140&quot;), &quot;.../Downloads/slutresultat&quot;)</code>.</p>
+<p><code>electionData</code> is used to make a data frame of election data from 2014. First choose wich municipality the data should contain. Municipality codes can be found here: <code>http://www.scb.se/Grupp/Hitta_statistik/Regional\%20statistik/Indelningar/_Dokument/kommunlankod.pdf</code>. Download the API <code>http://www.val.se/val/val2014/slutresultat/slutresultat.zip</code>, unzip and put in current directory (getwd()). Now use the function: electionData(kommun) with “kommun”= municipality code or municipality codes in a vector. For example: <code>electionData(c(&quot;0136&quot;, &quot;0140&quot;))</code>.</p>
 </div>
 <div id="shiny-app" class="section level2">
 <h2>Shiny App</h2>
-<p>To use the shiny app save a data with name “myData”: <code>myData &lt;- electionData()</code>. Load the app: <code>runGitHub(repo = &quot;electionApp&quot;, username = &quot;Carsv733&quot;,subdir = &quot;App-1&quot;)</code>.</p>
+<p>To use the shiny app save a data with name “myData”: <code>myData &lt;- electionData(...)</code>. Load the app: <code>runGitHub(repo = &quot;electionApp&quot;, username = &quot;Carsv733&quot;,subdir = &quot;App-1&quot;)</code>.</p>
 </div>
 
 
