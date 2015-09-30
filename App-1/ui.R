@@ -12,9 +12,10 @@ shinyUI(fluidPage(
     sidebarPanel(
       
       checkboxGroupInput("select", label = h3("Select parties"), 
-                  choices = list("Alla partier" = 1, "M" = 2, "C" = 3,
-                                 "FP" = 4, "KD" = 5, "S" = 6, "V" = 7,
-                                 "MP" = 8, "SD" = 9, "FI" = 10), selected = 1)),
+                  choices = list("C" = 1, "FI" = 2, "FP" = 3,
+                                 "KD" = 4, "M" = 5, "MP" = 6, "S" = 7,
+                                 "SD" = 8, "V" = 9, "Alla partier" = 10), selected = 10),
+    actionButton("action", label = "Plot")),
     
     # Show a plot of the generated distribution
     mainPanel(

@@ -1,4 +1,7 @@
+
 library(shiny)
+
+counts <- tapply(myData$Percent, list(as.factor(myData$Party), as.factor(myData$Kommun)), mean)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -9,32 +12,28 @@ shinyServer(function(input, output) {
   #  1) It is "reactive" and therefore should re-execute automatically
   #     when inputs change
   #  2) Its output type is a plot
+
   
-  output$distPlot <- renderPlot({
+  output$plot <- renderPlot({
     
-    counts <- tapply(myData$Percent, list(as.factor(myData$Party), as.factor(myData$Kommun)), mean)
-    names <- colnames(counts)
-    counts <- t(as.matrix(counts[rownames(counts)=="SD"]))
-    colnames(counts) <- names
-    barplot(counts, main="Votes, by municipal and party",
-            xlab="Municipal", col=c("lightblue"),
-            legend = "SD")
     
-    if (input$select==1) {   
+    if (10 %in% input$select) {   
       
-    counts <- tapply(myData$Percent, list(as.factor(myData$Party), as.factor(myData$Kommun)), mean)
     barplot(counts, main="Votes, by municipal and party",
             xlab="Municipal", col=c("darkblue", "green", "blue", "orange", "red" ,"darkred", "seagreen", "lightblue", "pink"),
             legend = myData$Party[1:9] , beside=TRUE)
-    } else if (input$select==2) {
-        
-      counts <- tapply(myData$Percent, list(as.factor(myData$Party), as.factor(myData$Kommun)), mean)
-      names <- colnames(counts)
-      counts <- t(as.matrix(counts[rownames(counts)=="SD"]))
-      colnames(counts) <- names
+    
+    } else {
+            
+       for (i in 1:9) {
+         #verkar inte finnas i inputselect!
+        if (i%in%input$select==FALSE) {
+          counts[-i,]
+        }
+      }
       barplot(counts, main="Votes, by municipal and party",
               xlab="Municipal", col=c("lightblue"),
-              legend = "SD")
+              legend = myData$Party[1:9] , beside=TRUE)
     }
     
   })
