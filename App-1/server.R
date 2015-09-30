@@ -11,7 +11,7 @@ shinyServer(function(input, output) {
    if (10 %in% input$select) { 
      
      barplot(counts, main="Votes, by municipal and party",
-             xlab="Municipal", col=colours,
+             xlab="Municipal", ylab="%", col=colours,
              legend = myData$Party[1:9] , beside=TRUE)
      
    } else {
@@ -23,7 +23,7 @@ shinyServer(function(input, output) {
      
      
      barplot(counts, main="Votes, by municipal and party",
-             xlab="Municipal", col=colours[seq(length(input))],
+             xlab="Municipal",ylab="%", col=colours[seq(length(input))],
              legend = rownames(counts) , beside=TRUE)
    }
   })
