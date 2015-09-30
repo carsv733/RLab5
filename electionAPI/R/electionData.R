@@ -9,8 +9,8 @@ electionData <- function(kommun) {
   #För möjliga argument "kommun" och "path" (path=sökväg)
   list <- list.files(paste(getwd(), "/slutresultat", sep=""),full.names=T,pattern = "*R.xml")
 
-  if (length(list)==0) {
-    stop("Invalid path argument")
+  if (length(list)==0) {    
+    stop("No folder slutresultat found in working directory")
   }
   folder <- "/slutresultat_"
   format <- "R.xml"
